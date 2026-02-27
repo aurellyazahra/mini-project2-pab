@@ -73,7 +73,7 @@ Aplikasi menggunakan sistem navigasi Flutter Navigator untuk berpindah antar hal
 
 # WIDGET
 
-## STRUKTUR LAYOUT
+## 1. STRUKTUR LAYOUT
 ### Scaffold
 Scaffold merupakan widget dasar yang digunakan sebagai struktur utama setiap halaman aplikasi. Widget ini menyediakan kerangka standar seperti AppBar, body, dan FloatingActionButton, sehingga memudahkan pengelolaan tata letak halaman secara konsisten.
 
@@ -95,7 +95,7 @@ Padding digunakan untuk memberikan jarak di dalam suatu widget agar tampilan tid
 ### SizedBox
 SizedBox digunakan untuk memberikan jarak kosong antar widget baik secara vertikal maupun horizontal. Selain itu, widget ini juga dapat mengatur tinggi atau lebar tertentu pada suatu komponen.
 
-## TAMPILAN DATA
+## 2. TAMPILAN DATA
 ### Text
 Text digunakan untuk menampilkan informasi berbentuk tulisan seperti judul buku, nama penulis, deskripsi buku, serta status ketersediaan buku.
 
@@ -112,7 +112,7 @@ Card digunakan untuk menampilkan data buku dalam bentuk kartu dengan tampilan ya
 ### Icon
 Icon digunakan untuk menampilkan simbol visual seperti ikon profil, ikon hapus, dan ikon aksi lainnya agar pengguna lebih mudah memahami fungsi tombol.
 
-## INTERAKSI PENGGUNA
+## 3. INTERAKSI PENGGUNA
 ### ElevatedButton
 ElevatedButton digunakan sebagai tombol utama untuk menjalankan aksi penting seperti meminjam buku, mengembalikan buku, menyimpan data buku, dan mengedit buku. Tombol ini memiliki tampilan menonjol sehingga mudah dikenali pengguna.
 
@@ -126,14 +126,14 @@ SnackBar digunakan untuk memberikan notifikasi sementara kepada pengguna setelah
 
 Widget ini digunakan untuk mendeteksi interaksi sentuhan pada item buku. Ketika pengguna menekan kartu buku, aplikasi akan membuka halaman detail buku.
 
-## NAVIGASI
+## 4. NAVIGASI
 ### Navigator.push()
 Navigator.push() digunakan untuk berpindah dari satu halaman ke halaman lain, misalnya dari halaman beranda menuju halaman detail buku atau halaman tambah buku.
 
 ### Navigator.pop()
 Navigator.pop() digunakan untuk kembali ke halaman sebelumnya sekaligus mengirim data hasil aksi, seperti data buku baru atau hasil edit buku.
 
-## FORM INPUT
+## 5. FORM INPUT
 ### TextField
 TextField digunakan untuk menerima input teks sederhana dari pengguna.
 
