@@ -51,7 +51,6 @@ class _AddPageState extends State<AddPage> {
                   tanggalPinjam: tglPinjamController.text,
                   tanggalKembali: tglKembaliController.text,
                 );
-
                 Navigator.pop(context, newData);
               },
               child: const Text("Simpan"),

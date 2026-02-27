@@ -63,7 +63,7 @@ class DetailPage extends StatelessWidget {
                   const SizedBox(height: 30),
                   
 
-                  /// ✅ Tombol Pinjam / Kembalikan
+                  /// Tombol Pinjam / Kembalikan
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
@@ -76,14 +76,12 @@ class DetailPage extends StatelessWidget {
                               builder: (_) => const AddPage(),
                             ),
                           );
-
                           if (result != null) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                 content: Text("Buku berhasil dipinjam!"),
                               ),
                             );
-
                             Navigator.pop(context, "borrow");
                           }
                         } else {
@@ -93,7 +91,6 @@ class DetailPage extends StatelessWidget {
                               content: Text("Buku berhasil dikembalikan!"),
                             ),
                           );
-
                           Navigator.pop(context, "return");
                         }
                       },
@@ -114,7 +111,6 @@ class DetailPage extends StatelessWidget {
                             builder: (_) => AddBookPage(book: book),
                           ),
                         );
-
                         if (updatedBook != null) {
                           Navigator.pop(context, updatedBook);
                         }

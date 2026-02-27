@@ -121,8 +121,6 @@ Widget build(BuildContext context) {
 
       body: Column(
         children: [
-        
-
         // ===== HEADER CUSTOM =====
         Container(
           width: double.infinity,
@@ -217,7 +215,6 @@ Widget build(BuildContext context) {
               ),
               itemBuilder: (context, index) {
                 final book = books[index];
-
                 return GestureDetector(
                   onTap: () async {
                     final result = await Navigator.push(
@@ -229,19 +226,16 @@ Widget build(BuildContext context) {
                   if (result is BookModel) {
                     updateBook(index, result);
                   }
-
                   if (result == "borrow") {
                     setState(() {
                       books[index].isAvailable = false;
                     });
                   }
-
                   if (result == "return") {
                     setState(() {
                       books[index].isAvailable = true;
                     });
                   }
-
                     if (result == true) {
                       updateBookStatus(index);
                     }
@@ -264,20 +258,55 @@ Widget build(BuildContext context) {
                       children: [
                         
                         // ===== DELETE ICON (SIMPLE) =====
-                      Align(
-                        alignment: Alignment.topRight,
-                        child: IconButton(
-                          icon: const Icon(Icons.delete, size: 16, color: Color.fromARGB(255, 168, 168, 168)),
-                          padding: EdgeInsets.zero,
-                          constraints: const BoxConstraints(),
-                          onPressed: () {
-                            setState(() {
-                              books.removeAt(index);
-                            });
-                          },
-                        ),
-                      ),
+                        Align(
+                          alignment: Alignment.topRight,
+                          child: IconButton(
+                            icon: const Icon(
+                              Icons.delete,
+                              size: 16,
+                              color: Color.fromARGB(255, 168, 168, 168),
+                            ),
+                            padding: EdgeInsets.zero,
+                            constraints: const BoxConstraints(),
+                            onPressed: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) => AlertDialog(
+                                  title: const Text("Hapus Buku"),
+                                  content: Text(
+                                    "Apakah kamu yakin ingin menghapus \"${book.title}\" ?",
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: const Text("Batal"),
+                                    ),
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
 
+                                        setState(() {
+                                          books.removeAt(index); // ✅ HAPUS DATA
+                                        });
+                                        ScaffoldMessenger.of(context).showSnackBar(
+                                          const SnackBar(
+                                            content: Text("Buku berhasil dihapus"),
+                                          ),
+                                        );
+                                      },
+                                      child: const Text(
+                                        "Hapus",
+                                        style: TextStyle(color: Colors.red),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        ),
                         const SizedBox(height: 6),
                         buildBookImage(
                           book.imageUrl,
@@ -320,7 +349,6 @@ Widget build(BuildContext context) {
                             ],
                           ),
                         ),
-                        
                         Padding(
                           padding:
                               const EdgeInsets.only(
@@ -347,7 +375,6 @@ Widget build(BuildContext context) {
                                 color: Colors.white,
                                 fontSize: 8,
                               ),
-                              
                             ),
                           ),
                         )

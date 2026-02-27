@@ -21,8 +21,6 @@ class _AddBookPageState extends State<AddBookPage> {
   @override
   void initState() {
     super.initState();
-
-    // ✅ Kalau mode edit, isi field dengan data lama
     if (widget.book != null) {
       titleController.text = widget.book!.title;
       authorController.text = widget.book!.author;
@@ -34,7 +32,6 @@ class _AddBookPageState extends State<AddBookPage> {
   @override
   Widget build(BuildContext context) {
     final isEdit = widget.book != null;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(isEdit ? "Edit Buku" : "Tambah Buku"),
@@ -110,7 +107,6 @@ class _AddBookPageState extends State<AddBookPage> {
                           isAvailable:
                               widget.book?.isAvailable ?? true,
                         );
-
                         Navigator.pop(context, book);
                       }
                     },
