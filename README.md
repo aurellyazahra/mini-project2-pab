@@ -72,3 +72,76 @@ Fitur pengembalian buku merupakan kebalikan dari fitur peminjaman. Jika buku sed
 Aplikasi menggunakan sistem navigasi Flutter Navigator untuk berpindah antar halaman, seperti dari homepage ke detail buku, halaman tambah buku, maupun halaman edit buku. Navigasi ini memungkinkan pertukaran data antar halaman sehingga perubahan data dapat langsung diperbarui tanpa perlu memulai ulang aplikasi.
 
 # WIDGET
+
+## STRUKTUR LAYOUT
+### Scaffold
+Scaffold merupakan widget dasar yang digunakan sebagai struktur utama setiap halaman aplikasi. Widget ini menyediakan kerangka standar seperti AppBar, body, dan FloatingActionButton, sehingga memudahkan pengelolaan tata letak halaman secara konsisten.
+
+### AppBar
+AppBar digunakan sebagai bagian header aplikasi yang menampilkan judul halaman serta navigasi utama. Pada aplikasi ini, AppBar berfungsi sebagai navigasi sederhana menuju menu Beranda, Buku, dan Profil.
+
+### Column
+Column digunakan untuk menyusun beberapa widget secara vertikal dari atas ke bawah. Widget ini banyak digunakan untuk menata elemen seperti gambar buku, judul, deskripsi, dan tombol aksi dalam satu halaman.
+
+### Row
+Row berfungsi untuk menyusun widget secara horizontal. Pada aplikasi ini digunakan untuk mengatur posisi teks navigasi dan beberapa elemen UI agar sejajar secara mendatar.
+
+### Container
+Container merupakan widget pembungkus yang digunakan untuk memberikan styling tambahan seperti warna latar belakang, ukuran, border radius, serta bayangan (shadow). Container membantu membuat tampilan kartu buku menjadi lebih rapi dan menarik.
+
+### Padding
+Padding digunakan untuk memberikan jarak di dalam suatu widget agar tampilan tidak terlalu rapat. Widget ini membantu meningkatkan keterbacaan dan kenyamanan tampilan antarmuka.
+
+### SizedBox
+SizedBox digunakan untuk memberikan jarak kosong antar widget baik secara vertikal maupun horizontal. Selain itu, widget ini juga dapat mengatur tinggi atau lebar tertentu pada suatu komponen.
+
+## TAMPILAN DATA
+### Text
+Text digunakan untuk menampilkan informasi berbentuk tulisan seperti judul buku, nama penulis, deskripsi buku, serta status ketersediaan buku.
+
+### Image.network
+
+Image.network digunakan untuk menampilkan gambar buku yang berasal dari URL internet. Widget ini memungkinkan pengguna menambahkan buku dengan gambar online tanpa perlu menyimpan aset secara lokal.
+
+### Image.asset
+Image.asset digunakan untuk menampilkan gambar yang tersimpan di dalam folder aset aplikasi. Widget ini digunakan pada buku bawaan aplikasi agar tetap dapat ditampilkan secara offline.
+
+### Card
+Card digunakan untuk menampilkan data buku dalam bentuk kartu dengan tampilan yang lebih modern. Widget ini membantu memberikan efek elevasi dan pemisahan visual antar item buku.
+
+### Icon
+Icon digunakan untuk menampilkan simbol visual seperti ikon profil, ikon hapus, dan ikon aksi lainnya agar pengguna lebih mudah memahami fungsi tombol.
+
+## INTERAKSI PENGGUNA
+### ElevatedButton
+ElevatedButton digunakan sebagai tombol utama untuk menjalankan aksi penting seperti meminjam buku, mengembalikan buku, menyimpan data buku, dan mengedit buku. Tombol ini memiliki tampilan menonjol sehingga mudah dikenali pengguna.
+
+### IconButton
+IconButton merupakan tombol berbasis ikon yang digunakan untuk aksi cepat seperti menghapus atau mengedit data buku. Widget ini membantu menjaga tampilan tetap minimalis.
+
+### SnackBar
+SnackBar digunakan untuk memberikan notifikasi sementara kepada pengguna setelah suatu aksi berhasil dilakukan, seperti menambahkan, menghapus, meminjam, atau mengembalikan buku.
+
+### GestureDetector / InkWell
+
+Widget ini digunakan untuk mendeteksi interaksi sentuhan pada item buku. Ketika pengguna menekan kartu buku, aplikasi akan membuka halaman detail buku.
+
+## NAVIGASI
+### Navigator.push()
+Navigator.push() digunakan untuk berpindah dari satu halaman ke halaman lain, misalnya dari halaman beranda menuju halaman detail buku atau halaman tambah buku.
+
+### Navigator.pop()
+Navigator.pop() digunakan untuk kembali ke halaman sebelumnya sekaligus mengirim data hasil aksi, seperti data buku baru atau hasil edit buku.
+
+## FORM INPUT
+### TextField
+TextField digunakan untuk menerima input teks sederhana dari pengguna.
+
+### TextFormField
+TextFormField merupakan versi lanjutan dari TextField yang mendukung validasi input. Widget ini digunakan untuk memastikan data buku tidak kosong sebelum disimpan.
+
+### Form
+Form digunakan sebagai pembungkus beberapa field input agar proses validasi data dapat dilakukan secara bersamaan sebelum data dikirim.
+
+### TextEditingController
+TextEditingController digunakan untuk mengontrol dan mengambil nilai input dari pengguna pada setiap field formulir, seperti judul buku, penulis, deskripsi, dan link gambar.
