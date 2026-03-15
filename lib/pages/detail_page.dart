@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../models/book_model.dart';
-import 'add_page.dart';
 import 'add_book_page.dart';
 
 class DetailPage extends StatelessWidget {
@@ -17,27 +16,30 @@ class DetailPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-              book.imageUrl.startsWith("http")
-                  ? Image.network(
-                      book.imageUrl,
-                      height: 250,
-                      width: double.infinity,
-                      fit: BoxFit.contain,
-                      errorBuilder: (context, error, stackTrace) {
-                        return const Icon(Icons.broken_image, size: 100);
-                      },
-                    )
-                  : Image.asset(
-                      book.imageUrl,
-                      height: 250,
-                      width: double.infinity,
-                      fit: BoxFit.contain,
-                    ),
+
+            book.imageUrl.startsWith("http")
+                ? Image.network(
+                    book.imageUrl,
+                    height: 250,
+                    width: double.infinity,
+                    fit: BoxFit.contain,
+                    errorBuilder: (context, error, stackTrace) {
+                      return const Icon(Icons.broken_image, size: 100);
+                    },
+                  )
+                : Image.asset(
+                    book.imageUrl,
+                    height: 250,
+                    width: double.infinity,
+                    fit: BoxFit.contain,
+                  ),
+
             Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+
                   Text(
                     book.title,
                     style: const TextStyle(
@@ -45,7 +47,9 @@ class DetailPage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+
                   const SizedBox(height: 8),
+
                   Text(
                     "Penulis: ${book.author}",
                     style: const TextStyle(
@@ -53,39 +57,31 @@ class DetailPage extends StatelessWidget {
                       color: Colors.grey,
                     ),
                   ),
+
                   const SizedBox(height: 16),
+
                   const Text(
                     "Deskripsi:",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
+
                   const SizedBox(height: 6),
                   Text(book.description),
                   const SizedBox(height: 30),
-                  
 
-                  /// Tombol Pinjam / Kembalikan
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () async {
+                      onPressed: () {
+
                         if (book.isAvailable) {
-                          // Jika buku tersedia → Pinjam
-                          final result = await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => const AddPage(),
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text("Buku berhasil dipinjam!"),
                             ),
                           );
-                          if (result != null) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text("Buku berhasil dipinjam!"),
-                              ),
-                            );
-                            Navigator.pop(context, "borrow");
-                          }
+                          Navigator.pop(context, "borrow");
                         } else {
-                          // Jika buku sedang dipinjam → Kembalikan
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                               content: Text("Buku berhasil dikembalikan!"),
@@ -93,6 +89,7 @@ class DetailPage extends StatelessWidget {
                           );
                           Navigator.pop(context, "return");
                         }
+
                       },
                       child: Text(
                         book.isAvailable
@@ -101,10 +98,14 @@ class DetailPage extends StatelessWidget {
                       ),
                     ),
                   ),
+
+                  const SizedBox(height: 10),
+
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () async {
+
                         final updatedBook = await Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -115,10 +116,7 @@ class DetailPage extends StatelessWidget {
                           Navigator.pop(context, updatedBook);
                         }
                       },
-                      child: const Text(
-                        "Edit Buku",
-                        textAlign: TextAlign.center,
-                      ),
+                      child: const Text("Edit Buku"),
                     ),
                   )
                 ],
