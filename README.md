@@ -1,4 +1,4 @@
-# MINI PROJECT 1 PAB
+# MINI PROJECT PAB
 
 NAMA: ZAHRA AURELLYA HERDIANSYAH
 
@@ -10,6 +10,14 @@ NIM: 2409116062
 Aplikasi Manajemen Buku Perpustakaan merupakan aplikasi mobile berbasis Flutter yang digunakan untuk menampilkan daftar buku, melihat detail buku, serta melakukan pengelolaan data buku secara sederhana. Pengguna dapat melihat informasi buku seperti judul, penulis, gambar, dan deskripsi. Selain itu, aplikasi menyediakan fitur peminjaman dan pengembalian buku untuk mensimulasikan sistem perpustakaan digital. Aplikasi ini dirancang dengan antarmuka sederhana dan interaktif sehingga mudah digunakan oleh pengguna dalam melakukan pengelolaan data buku.
 
 # FITUR APLIKASI
+
+## Registrasi
+
+Fitur ini digunakan untuk menambahkan akun dengan cara menginput email dan password yang nantinya akan langsung tersimpan dalam supabase.
+
+## Login
+
+Fitur ini bagi yang sudah memiliki akun atau sudah registrasi sebelumnya, untuk nantinya akan masuk ke dalam homepage (menampilkan daftar buku)
 
 ## Menampilkan Daftar Buku (Homepage)
 <img width="747" height="828" alt="image" src="https://github.com/user-attachments/assets/7b37e079-d0c0-4353-a177-a954a161cfc4" />
@@ -70,6 +78,19 @@ Fitur pengembalian buku merupakan kebalikan dari fitur peminjaman. Jika buku sed
 <img width="725" height="658" alt="image" src="https://github.com/user-attachments/assets/cfb45ef6-cbef-404d-94d4-0e463fac9c8b" />
 
 Aplikasi menggunakan sistem navigasi Flutter Navigator untuk berpindah antar halaman, seperti dari homepage ke detail buku, halaman tambah buku, maupun halaman edit buku. Navigasi ini memungkinkan pertukaran data antar halaman sehingga perubahan data dapat langsung diperbarui tanpa perlu memulai ulang aplikasi.
+
+## Fitur Tambahan
+### Light mode
+
+Fitur ini berfungsi untuk menampilkan aplikasi dalam mode terang.
+
+### Dark mode
+
+Fitur ini berfungsi untuk menampilkan aplikasi dalam mode gelap.
+
+### Logout
+
+Fitur ini digunakan untuk keluar dari homepage, dan akan kembali ke halaman login.
 
 # WIDGET
 
