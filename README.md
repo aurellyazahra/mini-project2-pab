@@ -12,6 +12,7 @@ Aplikasi Manajemen Buku Perpustakaan merupakan aplikasi mobile berbasis Flutter 
 # FITUR APLIKASI
 
 ## Registrasi
+![regis](assets/screenshots/Screenshot%2026-03-16%012344.png)
 
 Fitur ini digunakan untuk menambahkan akun dengan cara menginput email dan password yang nantinya akan langsung tersimpan dalam supabase.
 
