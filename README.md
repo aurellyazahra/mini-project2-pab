@@ -79,6 +79,19 @@ Fitur pengembalian buku merupakan kebalikan dari fitur peminjaman. Jika buku sed
 
 Aplikasi menggunakan sistem navigasi Flutter Navigator untuk berpindah antar halaman, seperti dari homepage ke detail buku, halaman tambah buku, maupun halaman edit buku. Navigasi ini memungkinkan pertukaran data antar halaman sehingga perubahan data dapat langsung diperbarui tanpa perlu memulai ulang aplikasi.
 
+## Fitur Tambahan
+### Light mode
+
+Fitur ini berfungsi untuk menampilkan aplikasi dalam mode terang.
+
+### Dark mode
+
+Fitur ini berfungsi untuk menampilkan aplikasi dalam mode gelap.
+
+### Logout
+
+Fitur ini digunakan untuk keluar dari homepage, dan akan kembali ke halaman login.
+
 # WIDGET
 
 ## 1. STRUKTUR LAYOUT
