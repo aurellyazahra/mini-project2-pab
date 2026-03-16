@@ -17,7 +17,7 @@ Aplikasi Manajemen Buku Perpustakaan merupakan aplikasi mobile berbasis Flutter 
 Fitur ini digunakan untuk menambahkan akun dengan cara menginput email dan password yang nantinya akan langsung tersimpan dalam supabase.
 
 ## Login
-![login](login.png)
+![login](assets/screenshots/Screenshot%202026-03-16%20014851.png)
 
 Fitur ini bagi yang sudah memiliki akun atau sudah registrasi sebelumnya, untuk nantinya akan masuk ke dalam homepage (menampilkan daftar buku)
 
@@ -83,14 +83,25 @@ Aplikasi menggunakan sistem navigasi Flutter Navigator untuk berpindah antar hal
 
 ## Fitur Tambahan
 ### Light mode
+![light](assets/screenshots/Screenshot%202026-03-16%20013347.png)
+
+![logolight](assets/screenshots/Screenshot%202026-03-16%20015000.png)
 
 Fitur ini berfungsi untuk menampilkan aplikasi dalam mode terang.
 
 ### Dark mode
+![dark](assets/screenshots/Screenshot%202026-03-16%20014938.png)
+
+![logodark](assets/screenshots/Screenshot%202026-03-16%20014952.png)
 
 Fitur ini berfungsi untuk menampilkan aplikasi dalam mode gelap.
 
 ### Logout
+![logout](assets/screenshots/Screenshot%202026-03-16%20014946.png)
+
+![logout2](assets/screenshots/Screenshot%202026-03-16%20015011.png)
+
+![logout3](assets/screenshots/Screenshot%202026-03-16%20015037.png)
 
 Fitur ini digunakan untuk keluar dari homepage, dan akan kembali ke halaman login.
 
